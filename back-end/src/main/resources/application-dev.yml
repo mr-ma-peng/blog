@@ -1,0 +1,14 @@
+server:
+  port: 8088
+# devtools
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+# log
+logging:
+  level:
+    com.example.blog: debug
+  file:
+    name: ${PWD}/logs/blog.log
