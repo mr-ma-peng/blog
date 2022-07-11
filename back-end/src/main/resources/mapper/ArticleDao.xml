@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.blog.dao.ArticleDao">
+
+    <resultMap type="com.example.blog.entity.Article" id="ArticleMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="likeCount" column="like_count" jdbcType="INTEGER"/>
+        <result property="viewCount" column="view_count" jdbcType="INTEGER"/>
+        <result property="collectionCount" column="collection_count" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into blog.article(user_id, title, content, like_count, view_count, collection_count, create_time, create_by, update_time, update_by)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.userId}, #{entity.title}, #{entity.content}, #{entity.likeCount}, #{entity.viewCount}, #{entity.collectionCount}, #{entity.createTime}, #{entity.createBy}, #{entity.updateTime}, #{entity.updateBy})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into blog.article(user_id, title, content, like_count, view_count, collection_count, create_time, create_by, update_time, update_by)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}, #{entity.title}, #{entity.content}, #{entity.likeCount}, #{entity.viewCount}, #{entity.collectionCount}, #{entity.createTime}, #{entity.createBy}, #{entity.updateTime}, #{entity.updateBy})
+        </foreach>
+        on duplicate key update
+         user_id = values(user_id) , title = values(title) , content = values(content) , like_count = values(like_count) , view_count = values(view_count) , collection_count = values(collection_count) , create_time = values(create_time) , create_by = values(create_by) , update_time = values(update_time) , update_by = values(update_by)     </insert>
+
+</mapper>
+
