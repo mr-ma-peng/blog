@@ -7,28 +7,24 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 /**
- * 文章表(Article)表实体类
+ * 好友表(UserFriend)表实体类
  *
  * @author makejava
- * @since 2022-07-11 23:11:44
+ * @since 2022-07-14 21:53:55
  */
 @Getter
 @Setter
-public class Article{
+public class UserFriend {
     //ID
     private Long id;
     //用户ID
     private Long userId;
-    //标题
-    private String title;
-    //内容
-    private String content;
-    //点赞数
-    private Integer likeCount;
-    //浏览量
-    private Integer viewCount;
-    //收藏次数
-    private Integer collectionCount;
+    //好友ID
+    private Long friendId;
+    //好友备注
+    private String note;
+    //好友状态
+    private String status;
     //创建时间
     private LocalDateTime createTime;
     //创建人

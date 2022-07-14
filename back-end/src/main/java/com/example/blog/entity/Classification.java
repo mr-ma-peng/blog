@@ -7,28 +7,22 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 /**
- * 文章表(Article)表实体类
+ * 分类表(Classification)表实体类
  *
  * @author makejava
- * @since 2022-07-11 23:11:44
+ * @since 2022-07-14 21:48:36
  */
 @Getter
 @Setter
-public class Article{
+public class Classification {
     //ID
     private Long id;
-    //用户ID
-    private Long userId;
-    //标题
-    private String title;
-    //内容
-    private String content;
-    //点赞数
-    private Integer likeCount;
-    //浏览量
-    private Integer viewCount;
-    //收藏次数
-    private Integer collectionCount;
+    //父分类ID
+    private Long parentId;
+    //分类描述
+    private String description;
+    //分类名称
+    private String name;
     //创建时间
     private LocalDateTime createTime;
     //创建人
