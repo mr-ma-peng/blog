@@ -1,6 +1,7 @@
 package com.example.blog.entity;
 
 
+import com.example.blog.common.BaseDO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public class Tag{
+public class Tag extends BaseDO {
     //ID
     private Long id;
     //标签名称

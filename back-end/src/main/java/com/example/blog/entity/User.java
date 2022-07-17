@@ -1,10 +1,9 @@
 package com.example.blog.entity;
 
 
+import com.example.blog.common.BaseDO;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 /**
  * 用户表(User)表实体类
@@ -14,7 +13,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public class User {
+public class User extends BaseDO {
     //ID
     private Long id;
     //用户名
@@ -34,14 +33,5 @@ public class User {
     //昵称
     private String nickname;
     //注册时间
-    private LocalDateTime registrationTime;
-    //创建时间
-    private LocalDateTime createTime;
-    //创建人
-    private String createBy;
-    //更新时间
-    private LocalDateTime updateTime;
-    //更新人
-    private String updateBy;
 }
 

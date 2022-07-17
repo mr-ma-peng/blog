@@ -1,6 +1,7 @@
 package com.example.blog.controller;
 
 import com.example.blog.dto.UserDTO;
+import com.example.blog.entity.User;
 import com.example.blog.service.UserService;
 import com.example.blog.validator.UserDTOGroupA;
 import io.swagger.annotations.Api;
@@ -61,10 +62,10 @@ public class UserController {
      * @param user 实体对象
      * @return 新增结果
      */
-//    @PostMapping
-//    public R insert(@RequestBody User user) {
-//        return success(this.userService.save(user));
-//    }
+    @PostMapping
+    public Boolean insert(@RequestBody User user) {
+        return userService.save(user);
+    }
 
     /**
      * 修改数据
