@@ -1,3 +1,5 @@
 /.idea/
 /logs/blog.log
 /logs/blog.log.2022-07-11.0.gz
+
+.DS_Store
