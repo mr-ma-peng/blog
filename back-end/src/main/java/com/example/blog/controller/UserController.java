@@ -3,6 +3,7 @@ package com.example.blog.controller;
 import com.example.blog.dto.UserDTO;
 import com.example.blog.service.UserService;
 import com.example.blog.validator.UserDTOGroupA;
+import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,20 +13,24 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.validation.groups.Default;
 
+/**
+ * 用户表(UserFriend)表控制层
+ *
+ * @author Peng Ma
+ * @since 2022-07-14 21:53:55
+ */
+@Api(tags = "User")
 @RestController
 @RequestMapping("user")
 public class UserController {
+
+    @Resource
+    private UserService userService;
 
     @PostMapping("owner")
     public String userParamsValidate(@RequestBody @Validated({UserDTOGroupA.class, Default.class}) UserDTO userDTO) {
         return userDTO.toString();
     }
-
-    /**
-     * 服务对象
-     */
-    @Resource
-    private UserService userService;
 
     /**
      * 分页查询所有数据

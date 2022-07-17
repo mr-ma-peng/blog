@@ -13,12 +13,16 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/blog?
   flyway:
     baseline-on-migrate: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 # log
 logging:
   level:
     com.example.blog: debug
   file:
     name: ${PWD}/logs/blog.log
+
 
 mybatis-plus:
   configuration:

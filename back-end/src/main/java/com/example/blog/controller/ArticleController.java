@@ -1,6 +1,7 @@
 package com.example.blog.controller;
 
 import com.example.blog.service.ArticleService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -9,9 +10,10 @@ import javax.annotation.Resource;
 /**
  * 文章表(Article)表控制层
  *
- * @author makejava
+ * @author Peng Ma
  * @since 2022-07-11 23:11:43
  */
+@Api(tags = "Article")
 @RestController
 @RequestMapping("article")
 public class ArticleController  {

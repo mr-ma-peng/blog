@@ -2,6 +2,7 @@ package com.example.blog.controller;
 
 
 import com.example.blog.service.CommentService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,9 +11,10 @@ import javax.annotation.Resource;
 /**
  * 评论表(Comment)表控制层
  *
- * @author makejava
+ * @author Peng Ma
  * @since 2022-07-14 21:49:01
  */
+@Api(tags = "Comment")
 @RestController
 @RequestMapping("comment")
 public class CommentController {

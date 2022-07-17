@@ -1,25 +1,28 @@
 package com.example.blog.controller;
 
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
-@Api(tags = "hello")
+@Api(tags = "Hello")
 @RestController
 @RequestMapping("hello")
 public class HelloController {
+
+    @ApiOperation(value = "hello world", notes = "返回字符串")
     @RequestMapping
     public String hello() {
         return "Hello world";
     }
 
-    @RequestMapping(value = "get", method = RequestMethod.GET)
+    @ApiOperation(value = "测试Get接口")
+    @GetMapping("get")
     public String getData() {
         return "RequestMethod GET";
     }
 
-    @RequestMapping(value = "post", method = RequestMethod.POST)
+    @ApiOperation(value = "测试Post接口")
+    @PostMapping("post")
     public String postData() {
         return "RequestMethod POST";
     }
