@@ -6,13 +6,11 @@ import com.example.blog.service.UserService;
 import com.example.blog.validator.UserDTOGroupA;
 import io.swagger.annotations.Api;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.groups.Default;
+import java.util.List;
 
 /**
  * 用户表(UserFriend)表控制层
@@ -51,10 +49,10 @@ public class UserController {
      * @param id 主键
      * @return 单条数据
      */
-//    @GetMapping("{id}")
-//    public R selectOne(@PathVariable Serializable id) {
-//        return success(this.userService.getById(id));
-//    }
+    @GetMapping("{id}")
+    public User selectOne(@PathVariable Long id) {
+        return userService.getById(id);
+    }
 
     /**
      * 新增数据
@@ -73,10 +71,10 @@ public class UserController {
      * @param user 实体对象
      * @return 修改结果
      */
-//    @PutMapping
-//    public R update(@RequestBody User user) {
-//        return success(this.userService.updateById(user));
-//    }
+    @PutMapping
+    public Boolean update(@RequestBody User user) {
+        return userService.updateById(user);
+    }
 
     /**
      * 删除数据
@@ -84,9 +82,9 @@ public class UserController {
      * @param idList 主键结合
      * @return 删除结果
      */
-//    @DeleteMapping
-//    public R delete(@RequestParam("idList") List<Long> idList) {
-//        return success(this.userService.removeByIds(idList));
-//    }
+    @DeleteMapping
+    public Boolean delete(@RequestParam("idList") List<Long> idList) {
+        return userService.removeByIds(idList);
+    }
 
 }
