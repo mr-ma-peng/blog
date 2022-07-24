@@ -2,6 +2,7 @@ package com.example.blog.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.blog.converter.UserConverter;
 import com.example.blog.dto.UserDTO;
 import com.example.blog.entity.User;
 import com.example.blog.service.UserService;
@@ -50,8 +51,8 @@ public class UserController {
      * @return 单条数据
      */
     @GetMapping("{id}")
-    public User selectOne(@PathVariable Long id) {
-        return userService.getById(id);
+    public UserDTO selectOne(@PathVariable Long id) {
+        return UserConverter.INSTANCE.toDTO(userService.getById(id));
     }
 
     /**
