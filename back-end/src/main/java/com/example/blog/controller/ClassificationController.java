@@ -1,12 +1,16 @@
 package com.example.blog.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.blog.entity.Classification;
 import com.example.blog.service.ClassificationService;
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * 分类表(Classification)表控制层
@@ -28,13 +32,12 @@ public class ClassificationController {
      * 分页查询所有数据
      *
      * @param page 分页对象
-     * @param classification 查询实体
      * @return 所有数据
      */
-//    @GetMapping
-//    public R selectAll(Page<Classification> page, Classification classification) {
-//        return success(this.classificationService.page(page, new QueryWrapper<>(classification)));
-//    }
+    @GetMapping
+    public IPage<Classification> selectAll(Page<Classification> page) {
+        return classificationService.page(page, null);
+    }
 
     /**
      * 通过主键查询单条数据
@@ -42,10 +45,10 @@ public class ClassificationController {
      * @param id 主键
      * @return 单条数据
      */
-//    @GetMapping("{id}")
-//    public R selectOne(@PathVariable Serializable id) {
-//        return success(this.classificationService.getById(id));
-//    }
+    @GetMapping("{id}")
+    public Classification selectOne(@PathVariable Serializable id) {
+        return classificationService.getById(id);
+    }
 
     /**
      * 新增数据
@@ -53,10 +56,10 @@ public class ClassificationController {
      * @param classification 实体对象
      * @return 新增结果
      */
-//    @PostMapping
-//    public R insert(@RequestBody Classification classification) {
-//        return success(this.classificationService.save(classification));
-//    }
+    @PostMapping
+    public Boolean insert(@RequestBody Classification classification) {
+        return classificationService.save(classification);
+    }
 
     /**
      * 修改数据
@@ -64,10 +67,10 @@ public class ClassificationController {
      * @param classification 实体对象
      * @return 修改结果
      */
-//    @PutMapping
-//    public R update(@RequestBody Classification classification) {
-//        return success(this.classificationService.updateById(classification));
-//    }
+    @PutMapping
+    public Boolean update(@RequestBody Classification classification) {
+        return classificationService.updateById(classification);
+    }
 
     /**
      * 删除数据
@@ -75,9 +78,9 @@ public class ClassificationController {
      * @param idList 主键结合
      * @return 删除结果
      */
-//    @DeleteMapping
-//    public R delete(@RequestParam("idList") List<Long> idList) {
-//        return success(this.classificationService.removeByIds(idList));
-//    }
+    @DeleteMapping
+    public Boolean delete(@RequestParam("idList") List<Long> idList) {
+        return classificationService.removeByIds(idList);
+    }
 }
 

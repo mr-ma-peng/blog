@@ -1,5 +1,7 @@
 package com.example.blog.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.blog.dto.UserDTO;
 import com.example.blog.entity.User;
 import com.example.blog.service.UserService;
@@ -34,14 +36,12 @@ public class UserController {
     /**
      * 分页查询所有数据
      *
-     * @param page 分页对象
-     * @param user 查询实体
      * @return 所有数据
      */
-//    @GetMapping
-//    public R selectAll(Page<User> page, User user) {
-//        return success(this.userService.page(page, new QueryWrapper<>(user)));
-//    }
+    @GetMapping
+    public IPage<User> selectAll(Page<User> page) {
+        return userService.page(page, null);
+    }
 
     /**
      * 通过主键查询单条数据
