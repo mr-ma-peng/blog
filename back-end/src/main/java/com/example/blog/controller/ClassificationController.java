@@ -18,7 +18,7 @@ import java.util.List;
  * @author Peng Ma
  * @since 2022-07-14 21:48:36
  */
-@Api(tags = "Classification")
+@Api(tags = {"分类接口"})
 @RestController
 @RequestMapping("classification")
 public class ClassificationController {

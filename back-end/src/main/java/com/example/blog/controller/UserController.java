@@ -15,12 +15,12 @@ import javax.validation.groups.Default;
 import java.util.List;
 
 /**
- * 用户表(UserFriend)表控制层
+ * 用户表(User)表控制层
  *
  * @author Peng Ma
  * @since 2022-07-14 21:53:55
  */
-@Api(tags = "User")
+@Api(tags = {"用户接口"})
 @RestController
 @RequestMapping("user")
 public class UserController {

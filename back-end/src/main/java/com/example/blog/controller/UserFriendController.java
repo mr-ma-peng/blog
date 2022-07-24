@@ -18,7 +18,7 @@ import java.util.List;
  * @author Peng Ma
  * @since 2022-07-14 21:53:55
  */
-@Api(tags = "UserFriend")
+@Api(tags = {"好友接口"})
 @RestController
 @RequestMapping("userFriend")
 public class UserFriendController {

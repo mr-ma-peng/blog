@@ -18,7 +18,7 @@ import java.util.List;
  * @author Peng Ma
  * @since 2022-07-11 23:11:43
  */
-@Api(tags = "Article")
+@Api(tags = {"文章接口"})
 @RestController
 @RequestMapping("article")
 public class ArticleController  {
