@@ -1,7 +1,7 @@
 package com.example.blog.entity;
 
 
-import com.example.blog.common.BaseDO;
+import com.example.blog.common.Base;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +13,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Comment extends BaseDO {
+public class Comment extends Base {
     //ID
     private Long id;
     //父评论ID

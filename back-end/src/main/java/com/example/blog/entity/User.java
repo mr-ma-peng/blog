@@ -1,7 +1,7 @@
 package com.example.blog.entity;
 
 
-import com.example.blog.common.BaseDO;
+import com.example.blog.common.Base;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public class User extends BaseDO {
+public class User extends Base {
     //ID
     private Long id;
     //用户名
