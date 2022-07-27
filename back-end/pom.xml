@@ -80,6 +80,12 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.5.2.Final</version>
         </dependency>
+
+        <!-- spring boot jdbc -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
