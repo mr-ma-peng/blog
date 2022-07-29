@@ -1,7 +1,7 @@
 package com.example.blog.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.blog.dao.UserFriendDao;
+import com.example.blog.mapper.UserFriendMapper;
 import com.example.blog.entity.UserFriend;
 import com.example.blog.service.UserFriendService;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @since 2022-07-14 21:53:55
  */
 @Service("userFriendService")
-public class UserFriendServiceImpl extends ServiceImpl<UserFriendDao, UserFriend> implements UserFriendService {
+public class UserFriendServiceImpl extends ServiceImpl<UserFriendMapper, UserFriend> implements UserFriendService {
 
 }
 

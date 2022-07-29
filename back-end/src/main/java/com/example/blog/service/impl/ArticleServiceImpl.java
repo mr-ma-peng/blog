@@ -1,7 +1,7 @@
 package com.example.blog.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.blog.dao.ArticleDao;
+import com.example.blog.mapper.ArticleMapper;
 import com.example.blog.entity.Article;
 import com.example.blog.service.ArticleService;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @since 2022-07-11 23:11:45
  */
 @Service("articleService")
-public class ArticleServiceImpl extends ServiceImpl<ArticleDao, Article> implements ArticleService {
+public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements ArticleService {
 
 }
 
