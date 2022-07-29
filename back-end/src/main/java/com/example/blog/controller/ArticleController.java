@@ -21,7 +21,7 @@ import java.util.List;
 @Api(tags = {"文章接口"})
 @RestController
 @RequestMapping("article")
-public class ArticleController  {
+public class ArticleController {
     /**
      * 服务对象
      */
